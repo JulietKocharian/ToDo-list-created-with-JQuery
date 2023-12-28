@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My ToDo list</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" class="txt" placeholder="Add a task">
+        <div class="notCompleted">
+            <h3>Not Completed</h3>
+        </div>
+        <div class="completed">
+            <h3>Completed</h3>
+    </div>
+    <script>
+        $('.txt').on('keyup', function(event){
+            if(event.keyCode == 13 && $('.txt').val() != "") {
+                let $del = $('<i class="fas fa-trash-alt"></i>').on('click', function(){
+                    let $removed = $(this).parent();
+                    $removed.fadeOut(function(){
+                       $removed.remove();
+
+                    });
+                  
+                });
+                let $check = $('<i class="fas fa-check"></i>').on('click', function(){
+                    let $checked = $(this).parent();
+                    $checked.fadeOut(function(){
+                        if($('.txt').val() != " ") {
+                       $('.completed').append($checked);
+                       $checked.fadeIn();
+                }
+            });
+                $(this).remove();
+            });
+                let $task = $('<div class="task"></div>').text($('.txt').val());
+                $task.append($del, $check);
+                $('.notCompleted').append($task);
+                $('.txt').val('');
+            }
+        
+    });
+
+
+    </script>
+</body>
+
+</html>

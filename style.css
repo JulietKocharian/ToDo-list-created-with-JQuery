@@ -1,0 +1,42 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat", sans-serif;
+}
+body{
+    background-image: linear-gradient(120deg, #ffc374, #6ee8fd);
+}
+.container{
+    max-width: 800px;
+    margin: auto;
+    padding: 10px;
+}
+.txt{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #000;
+    background: none;
+    outline: none;
+    font-size: 18px;
+    padding: 10px;
+}
+h3{
+    margin: 10px 0;
+
+}
+.task{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 18px;
+    margin: 6px 0;
+}
+.task i{
+    float: right;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.completed .task{
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
